@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Litgorithm</title>
+    <link rel="icon" href="logo.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+         {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            /* Animated colorful background */
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #7afcff, #5a86ff);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #1f2933;
+            overflow-y: auto;
+        }
+
+        @keyframes gradientBG {
+            0% {background-position: 0% 50%;}
+            50% {background-position: 100% 50%;}
+            100% {background-position: 0% 50%;}
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #4f46e5, #6366f1, #818cf8); /* soft professional gradient */
+            color: white;
+            padding: 40px 20px; /* reduced padding for smaller height */
+            text-align: center;
+            backdrop-filter: blur(6px);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+
+        .header h1 {
+            font-size: 2rem; /* smaller heading */
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1rem;
+            max-width: 500px;
+            margin: auto;
+            color: #e0e7ff;
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1000px;
+            margin: -40px auto 60px; /* smaller overlap to match new header */
+            padding: 0 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 16px;
+            padding: 60px;
+            min-height: 800px;
+            max-height: 1200px;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #374151;
+            margin-bottom: 12px;
+        }
+
+        .divider {
+            height: 1px;
+            background: #e5e7eb;
+            margin: 40px 0;
+        }
+
+        /* Button */
+        .cta {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .cta a {
+            display: inline-block;
+            padding: 16px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            background: linear-gradient(90deg, #2563eb, #1d4ed8);
+            color: white;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .cta a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(37, 99, 235, 0.35);
+        }
+
+        /* Scrollbar styling for card */
+        .card::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        .card::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .card::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #2563eb, #1d4ed8);
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #1f2933;
+            padding-bottom: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 1.6rem;
+            }
+
+            .card {
+                padding: 35px;
+            }
+
+            .section h2 {
+                font-size: 1.4rem;
+            }
+
+            .cta a {
+                padding: 14px 28px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h1><img src="logo.png" alt="Image failed to load" width="230"></h1>
+
+
+    </div>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="card">
+
+            <div class="section">
+                <h2>About Litgorithm</h2>
+                <p>
+                    Many people don't have access to education today, the main reason being the cost factor.
+                    So here is a cost-free solution- Litgorithm.
+                    No cost, no adds, no account creation required. Just study and read for free offline.
+                    Every human being has right to education and our aim is to provide knowledge
+                    to people free of cost irrespective of their personal background.<br>
+                    Litgorithm currently works only on Windows and Linux. Mac and mobile versions coming soon!<br>
+                </p>
+            </div>
+
+            <div class="section">
+            	<h2>Writing to Litgorithm</h2>
+                <p>
+                    Want to share your own work or ideas with other people. Litgorithm lets you to do that!
+                </p>
+
+                    <h3>Application process</h3>
+		            <p>
+		            	To write to Litgorithm, you have to apply through our website.
+		            	Don't worry, the application process is simple and hastle free.<br><br>
+
+		            	Only PDFs of the work will be accepted.<br>
+		            	The content of the PDF should be proper text and not a PDF of scanned image.<br>
+		            	The applicant must have a valid email id.<br>
+		            	The work submitted should be the applicant's original creation.<br>
+		            	Your work may be used by others if you want to write anything to Litgorithm.<br>
+		            	Any inappropriate, vulgar or controversial topic in the work shall be rejected.<br>
+		            	All works after application shall be reviewed by our team and shall be AI checked.<br>
+		            	The result of the application shall be sent by email within a month.<br>
+		            	If accepted, your work shall be put on the next version of Litgorithm when released.<br>
+		            	If rejected, the reason of rejection shall be sent via email.<br>
+		            	You may reapply for the same work with the required changes if you wish to.<br>
+		            </p>
+		   <h3>Licensing your work</h3>
+		   	<p>Want to license your work? You can do that for free too!
+		   	You can apply for a Creative Commons License(CC-BY-NC-ND) in your application.
+		   	Under this license:<br>
+		   	1) People can use your work but have to give you the right credit.<br>
+		   	2) People can use your work for non-commercial or non-profitable work only.<br>
+		   	3) People can't make derivatives or adaptations to your original work.<br><br>
+
+		   	Please Note: If you wish to license your work, then your identity CANNOT be kept Anonymous on the app.
+		   	In such cases your name shall be included on the app along with your work.
+
+		   	If you wish to remain Anonymous, you can't apply for a Creative Commons License through us. In such case, your identity shall be kept confidential.
+		   	</p>
+
+		   	Learn more about Creative Commons License on <a href="https://creativecommons.org/share-your-work/cclicenses/">https://creativecommons.org/share-your-work/cclicenses/</a>
+
+            </div>
+
+            <div class="section">
+            	<h2>Supported Languages</h2>
+            		We currently support 10 languages in our app. More versions shall be introduced later in the future versions.<br>
+            		Get to know more about our supported languages <a href="languages.html">here</a>
+            </div>
+
+            <div class="section">
+                <h2>Apply Now!</h2>
+                    <p>Are you ready to apply? Applications for the next version are now open!<br>
+                    The next version of the app shall be released soon.</p>
+            </div>
+
+            <div ></div>
+
+            <div class="cta">
+                <a href="form.html">Apply Now</a>
+            </div>
+
+            <div>
+            	<h2>Contact Us</h2>
+            		<p>In case of any query contact us on astroterium.official@gmail.com</p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        © 2026 Litgorithm
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Litgorithm Writing Application</h1>
+
+    <p class="description">
+        This is the official application form for writing to Litgorithm next version.<br><br>
+
+        If you apply for a Creative Commons License, your identity on the app can't be kept anonymous.
+        If you want to keep your work open, you may choose anonymous. In such cases, your name and email
+        shall be kept confidential.<br><br>
+
+        The result of your application shall be shared via email.<br><br>
+
+        Learn more about Creative Commons license:
+        <a href="https://creativecommons.org/share-your-work/cclicenses/" target="_blank" rel="noopener noreferrer">
+            https://creativecommons.org/share-your-work/cclicenses/
+        </a><br><br>
+        In case you have any questions please contact us on astroterium.official@gmail.com
+    </p>
+
+    <form method="POST" action="https://formsubmit.co/b0d3e72cc96b6cc70dde1d60f76af57f" enctype="multipart/form-data">
+
+        <!-- Full Name -->
+        <label>Full Name</label>
+        <input type="text" name="name" required>
+
+        <!-- Email -->
+        <label>Email Address</label>
+        <input type="email" name="email" required>
+
+        <!-- Anonymous -->
+        <label>Do you want to keep your identity anonymous?</label>
+        <div class="options">
+            <label><input type="radio" name="Anonymous" value="Yes" required> Yes</label>
+            <label><input type="radio" name="Anonymous" value="No"> No</label>
+        </div>
+
+        <!-- License -->
+        <label>Do you want to apply Creative Commons License (CC BY-NC-ND)?</label>
+        <div class="options">
+            <label><input type="radio" name="License" value="Yes" required> Yes</label>
+            <label><input type="radio" name="License" value="No"> No</label>
+        </div>
+
+        <!-- Categories -->
+        <label>Categories your work belongs to (select at least one)</label>
+        <div class="options" id="categories">
+            <label><input type="checkbox" name="Category[]" value="Art"> Art</label>
+            <label><input type="checkbox" name="Category[]" value="Literature"> Literature</label>
+            <label><input type="checkbox" name="Category[]" value="Indian Language"> Indian Language</label>
+            <label><input type="checkbox" name="Category[]" value="Foreign Language"> Foreign Language</label>
+            <label><input type="checkbox" name="Category[]" value="Law"> Law</label>
+            <label><input type="checkbox" name="Category[]" value="History"> History</label>
+            <label><input type="checkbox" name="Category[]" value="Geography"> Geography</label>
+            <label><input type="checkbox" name="Category[]" value="Economics"> Economics</label>
+            <label><input type="checkbox" name="Category[]" value="Computer"> Computer</label>
+            <label><input type="checkbox" name="Category[]" value="Technology"> Technology</label>
+            <label><input type="checkbox" name="Category[]" value="Engineering"> Engineering</label>
+            <label><input type="checkbox" name="Category[]" value="Science"> Science</label>
+            <label><input type="checkbox" name="Category[]" value="Mathematics"> Mathematics</label>
+            <label><input type="checkbox" name="Category[]" value="Business"> Business</label>
+            <label><input type="checkbox" id="otherCheck" name="Category[]" value="Other"> Other</label>
+        </div>
+
+        <input type="text"
+               id="otherText"
+               name="Other Category"
+               placeholder="Please specify other category"
+               style="display:none;">
+
+        <!-- ✅ NEW DROPDOWN QUESTION (ADDED) -->
+        <label>What is the language used in your work?</label>
+        <select name="Theme" id="themeSelect" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="Bengali" name="Language">Bengali</option>
+            <option value="English" name="Language">English</option>
+            <option value="French" name="Language">French</option>
+            <option value="German" name="Language">German</option>
+            <option value="Hindi" name="Language">Hindi</option>
+            <option value="Italian" name="Language">Italian</option>
+            <option value="Marathi" name="Language">Marathi</option>
+            <option value="Portuguese" name="Language">Portuguese</option>
+            <option value="Sanskrit" name="Language">Sanskrit</option>
+            <option value="Spanish" name="Language">Spanish</option>
+            <option value="Other" name="Language">Other</option>
+        </select>
+
+        <input type="text"
+               id="themeOtherText"
+               name="Other Theme"
+               placeholder="Please specify other language"
+               style="display:none;">
+
+        <!-- Criteria -->
+        <label>Do you agree to the following?</label>
+        <div class="options">
+            <label><input type="checkbox" required> I declare that the information provided above is accurate. Any inaccuracy might lead to rejection of application.</label>
+            <label><input type="checkbox" required> I declare that the work submitted above is my original creation</label>
+            <label><input type="checkbox" required> I provide Litgorithm the permission for review & AI-check my work</label>
+            <label><input type="checkbox" required> I declare that no inappropriate or vulgar content has been included in my work</label>
+        </div>
+
+        <!-- Upload -->
+        <label>Upload your work (PDF only)</label>
+        <input type="file" id="fileInput" name="Work File" accept=".pdf" required>
+
+        <!-- Optional -->
+        <label>Anything else you want us to know? (Optional)</label>
+        <textarea name="Additional Info" rows="4"></textarea>
+
+        <button type="submit">Submit</button>
+
+        <input type="hidden" name="_next" value="thankyou.html">
+        <input type="hidden" name="_captcha" value="false">
+    </form>
+</div>
+
+<!-- ✅ SCRIPT (ONLY EXTENDED, NOT CHANGED) -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const form = document.querySelector("form");
+    const fileInput = document.getElementById("fileInput");
+    const otherCheck = document.getElementById("otherCheck");
+    const otherText = document.getElementById("otherText");
+
+    const themeSelect = document.getElementById("themeSelect");
+    const themeOtherText = document.getElementById("themeOtherText");
+
+    const MAX_FILE_SIZE = 1024*1024*1024;
+
+    // Show / hide Other category
+    otherCheck.addEventListener("change", () => {
+        otherText.style.display = otherCheck.checked ? "block" : "none";
+        otherText.required = otherCheck.checked;
+    });
+
+    // Show / hide Other theme
+    themeSelect.addEventListener("change", () => {
+        const isOther = themeSelect.value === "Other";
+        themeOtherText.style.display = isOther ? "block" : "none";
+        themeOtherText.required = isOther;
+    });
+
+    form.addEventListener("submit", (e) => {
+
+        const selectedCategories =
+            document.querySelectorAll('#categories input[type="checkbox"]:checked').length;
+
+        if (selectedCategories === 0) {
+            e.preventDefault();
+            alert("Please select at least one category.");
+            return;
+        }
+
+        const file = fileInput.files[0];
+        if (!file) {
+            e.preventDefault();
+            alert("Please upload a file.");
+            return;
+        }
+
+        if (file.size > MAX_FILE_SIZE) {
+            e.preventDefault();
+            alert("File too large. Maximum allowed size exceeded.");
+        }
+    });
+});
+</script>
+
+<div class="footer">
+    © 2026 Litgorithm
+</div>
+
+</body>
+</html>
